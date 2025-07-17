@@ -78,5 +78,5 @@ def reaction_diffusion(t, C_flat):
 
 t_eval = np.linspace(0, T, N_t)
 C0 = np.ravel([C_A, C_I, C_R, C_P])
-sol = solve_ivp(reaction_diffusion, [0, 10], C0, t_eval=t_eval, method='RK45')
+sol = solve_ivp(reaction_diffusion, [0, 1], C0, t_eval=t_eval, method='RK45')
 C_A_sol, C_I_sol, C_R_sol, C_P_sol = sol.y.reshape((4, N_r, N_theta, -1))
